@@ -63,6 +63,17 @@ app.controller('controlGrilla', function($scope, $http) {
      		
  	 });*/
 
+$http.get("http://www.mocky.io/v2/57c822cc120000d603e769a0")
+  .then(function(respuesta) {       
+
+         $scope.listadodedatos=respuesta.data;
+         console.log(respuesta.data);
+
+    },function errorCallback(response) {
+         $scope.ListadoPersonas= [];
+        console.log( response);
+        
+   });
 
 
 
