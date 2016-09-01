@@ -53,12 +53,30 @@
 			<h1> <!--?php echo $titulo; ?-->titulo </h1>
 
 			<form id="FormIngreso"  enctype="multipart/form-data" >
-				<input type="text" name="apellido" ng-model="mascota.raza" placeholder="ingrese apellido" value="" />
-				<span id="lblApellido" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*
-				</span>
-				<input type="text" name="nombre" ng-model="mascota.nombre" placeholder="ingrese nombre" value="" /> <span id="lblNombre" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
-				<input type="text" name="dni" ng-model="mascota.fecha" placeholder="ingrese dni" value=""     /> 
-				<span id="lblDni" style="display:none;color:#FF0000;width:1%;float:right;font-size:80">*</span>
+
+				<input type="checkbox" name="ver" value="ver" > ver<br>
+				<input ng-if="!ver" type="text" name="nombre" placeholder="ingrese nombre" value="" /> 
+				<input type="text" name="apellido" placeholder="ingrese apellido" value="" />
+				<input type="number" name="edad" placeholder="edad" value="" />
+				<input type="number" name="dni" placeholder="dni" value="" />
+				<input type="email" name="email" placeholder="email" value="" />
+				<select name="estadocivil">
+				  <option value="Soltero">Soltero</option>
+				  <option value="Casado">Casado</option>
+				  <option value="Viudo">Viudo</option>
+				  <option value="Otro">Otro</option>
+				</select>
+				<input type="date" name="nacimiento" placeholder="nacimiento" value="" />
+				<input type="text" name="sexo" placeholder="ingrese sexo" value="" />
+				<input type="radio" name="gender" value="male"> Male<br>
+				<input type="radio" name="gender" value="female"> Female<br>
+				<input type="radio" name="gender" value="other"> Other
+				<input type="checkbox" name="C" value="C" > C<br>
+				<input type="checkbox" name="C sharp" value="C sharp" > C sharp<br>
+				<input type="checkbox" name="VB" value="VB" > VB<br>
+				<input type="password" name="clave" placeholder="nacimiento" value="" />
+				<input type="password" name="copiaclave" placeholder="nacimiento" value="" />
+				<input type="text" name="dni" placeholder="ingrese dni" value=""     /> 
 				<p style='color: black;'>*El DNI no se puede modificar.</p> ": "" ; ?>
 				
 				<input type="hidden" name="idOculto" id="id" value="" />
@@ -70,7 +88,7 @@
 				<p style="  color: black;">*La foto se actualiza al guardar.</p>
 				-->
 
-				<a class="btn btn-info " name="guardar" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
+				<a class="btn btn-info " name="guardar" ng-if="ver" ng-click="Guardar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Guardar</a>
 					
 				<input type="hidden" value="" id="idParaModificar" name="agregar" />
 				<input type="hidden" value="" id="hdnAgregar" name="agregar" />

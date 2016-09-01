@@ -23,6 +23,11 @@ app.controller('controlAlta', function($scope, $http) {
  $scope.persona.dni= "12312312" ;
   $scope.persona.apellido= "natalia" ;
   $scope.persona.foto="sinfoto";
+  $scope.persona.clave="sinfoto";
+  $scope.persona.copiaclave="sinfoto";
+  $scope.persona.estadoCivil="sinfoto";
+  $scope.persona.email="sinfoto";
+   $scope.persona.edad="sinfoto";
 
 
   $scope.Guardar=function(){
